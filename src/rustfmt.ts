@@ -9,8 +9,7 @@ const rustfmt = async (
   args: string = core.getInput("args"),
   toolchain = core.getInput("toolchain")
 ): Promise<string[]> => {
-  if (!toolchain || toolchain.length == 0)
-    toolchain = "stable";
+  if (!toolchain || toolchain.length == 0) toolchain = "stable";
   output.splice(0, output.length);
   return Cargo.get()
     .then(async (cargo) =>
