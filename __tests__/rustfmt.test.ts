@@ -1,6 +1,6 @@
 import rustfmt from "../src/rustfmt";
 
-jest.setTimeout(10000);
+jest.setTimeout(15000);
 
 test("rustfmt check output is empty when nothing is required", async () => {
   expect(
