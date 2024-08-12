@@ -20,7 +20,7 @@ const rustfmt = async (
           .concat(options),
         {
           listeners: {
-            stdout: (data: Buffer) => {
+            stdline: (data) => {
               output.push(data.toString().trim());
             },
           },
