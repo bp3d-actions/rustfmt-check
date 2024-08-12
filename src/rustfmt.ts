@@ -7,7 +7,7 @@ const output: string[] = [];
 const rustfmt = async (
   options: string[] = [],
   args: string = core.getInput("args"),
-  toolchain = core.getInput("toolchain")
+  toolchain = core.getInput("toolchain"),
 ): Promise<string[]> => {
   if (!toolchain || toolchain.length == 0) toolchain = "stable";
   output.splice(0, output.length);
@@ -24,8 +24,8 @@ const rustfmt = async (
               output.push(data.toString().trim());
             },
           },
-        }
-      )
+        },
+      ),
     )
     .then(() => output.filter(Boolean));
 };
